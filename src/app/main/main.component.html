@@ -1,0 +1,25 @@
+<button (click)="showWidgetss()">Show Widgets</button>
+<div class="top-section" *ngIf="showWidgets">
+    <app-top-widgets [Datawidget]="DataFromParent" ></app-top-widgets>
+    <!-- <p>{{DataFromWidget}}</p> -->
+  </div>
+  <div class="middle-section" *ngIf="showWidgets">
+    <div class="widget left">
+      <app-left-middle-widget></app-left-middle-widget>
+      <p>{{DataFromWidget}}</p>
+    </div>
+    <div class="widget right">
+      <app-right-middle-widget></app-right-middle-widget>
+      <p>{{DataFromWidget}}</p>
+    </div>
+  </div>
+  <div class="bottom-section" *ngIf="showWidgets">
+    <div class="widget left">
+      <app-left-last-widget (myEvent)="getData($event)" ></app-left-last-widget>
+      <p>{{DataFromWidget}}</p>
+    </div>
+    <div class="widget right">
+      <app-right-last-widget></app-right-last-widget>
+      <p>{{DataFromWidget}}</p>
+    </div>
+  </div>
